@@ -1,10 +1,11 @@
+import { Link } from "react-router-dom";
 
 
 const Toy = ({toy}) => {
-    const {photoUrl,name, price, rating }= toy;
+    const {photoUrl,name, price, rating,_id }= toy;
     return (
         <div>
-                           <div className="card w-96 bg-base-100 shadow-xl ">
+  <div className="card w-96 h-96 bg-base-100 shadow-xl ">
   <figure><img src={photoUrl} alt="Shoes" /></figure>
   <div className="card-body">
     <h2 className="card-title">
@@ -14,7 +15,7 @@ const Toy = ({toy}) => {
     <p>Rating: {rating}</p>
     <div className="card-actions justify-end">
 
-      <div className="badge badge-outline">Details</div>
+    <Link to={`/toy/${_id}`}> <button className="btn btn-ghost btn-xs">details</button></Link> 
     </div>
   </div>
 </div>

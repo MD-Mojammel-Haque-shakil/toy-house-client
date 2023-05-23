@@ -14,13 +14,14 @@ const ShopByCate = () => {
         .then(data=>setToys(data))
   }, [select])
   return (
-    <div>
-      <div className="btn-group my-4 mx-auto">
-        <button onClick={()=>setSelect('sport')} className="btn btn-active">Sports car</button>
-        <button onClick={()=>setSelect('police')} className="btn">Police car</button>
-        <button onClick={()=>setSelect('truck')} className="btn">Truck</button>
+    <div className="">
+      <h3 className="text-purple-600 text-3xl text-center mt-8">Shop By CateGory</h3>
+      <div className="btn- my-4 lg:mx-96">
+        <button onClick={()=>setSelect('sport')} className="btn btn-active sm:ms-4  lg:me-12">Sports car</button>
+        <button onClick={()=>setSelect('police')} className="btn btn-warning  lg:me-12">Police car</button>
+        <button onClick={()=>setSelect('truck')} className="btn btn-success lg:me-12">Fire Truck</button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-5 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 my-5 mx-auto w-full">
         {
           toys.map(toy=> <Toy key={toy._id} toy={toy}>
              
