@@ -15,6 +15,7 @@ import AllToy from './pages/AllToy/AllToy';
 import DetailsCard from './pages/AllToy/DetailsCard';
 import MyToys from './pages/MyToys/MyToys';
 import Update from './pages/MyToys/Update';
+import PrivateRoutes from './pages/PrivateRoutes/PrivateRoutes';
 
 
 const router = createBrowserRouter([
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/addatoy',
-        element: <AddAtoy></AddAtoy>
+        element: <PrivateRoutes><AddAtoy></AddAtoy></PrivateRoutes>
       },
       {
         path: '/alltoys',
@@ -44,12 +45,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/toy/:id',
-        element:<DetailsCard></DetailsCard>,
+        element: <PrivateRoutes><DetailsCard></DetailsCard></PrivateRoutes>,
         loader: ({params})=> fetch (`https://toys-home-server.vercel.app/toys/${params.id}`)
       },
       {
         path: 'mytoys',
-        element: <MyToys></MyToys>
+        element: <PrivateRoutes> <MyToys></MyToys></PrivateRoutes>
       },
       
       {

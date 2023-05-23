@@ -1,12 +1,16 @@
 
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../firebase/firebase.config";
 
 const Login = () => {
   const {signIn} = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/"
 
   const handleSignIn = event=>{
     event.preventDefault();
@@ -18,6 +22,8 @@ const Login = () => {
     .then(result =>{
       const user = result.user;
       console.log(user)
+      form.reset()
+      navigate(from, {replace : true})
     })
   .catch(error=>{
       console.log(error)
@@ -40,14 +46,18 @@ const Login = () => {
     }
     return (
         <div>
+                      
            <div className="hero min-h-screen bg-base-200">
+          
   <div className="hero-content flex-col ">
     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
       <div className="card-body">
        
          <form onSubmit={handleSignIn}>
          <div className="form-control">
+         <h3 className="text-red-400 text-3xl fond-bold">please log in </h3>
           <label className="label">
+
             <span className="label-text">Email</span>
           </label>
           <input type="text" placeholder="email" name='email' className="input input-bordered" />

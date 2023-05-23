@@ -39,6 +39,7 @@ const Register = () => {
         
         <form onSubmit={handleSignUp}>
         <div className="form-control">
+        <h3 className="text-red-400 text-3xl fond-bold">please sign up </h3>
           <label className="label">
             <span className="label-text">Name</span>
           </label>

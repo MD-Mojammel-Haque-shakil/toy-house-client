@@ -1,7 +1,16 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
+import swal from "sweetalert";
 
 
 const Toy = ({toy}) => {
+  const {user} = useContext(AuthContext)
+  const handleAlert= ()=>{
+    if(!user){
+      swal('You have to log in first to view details')
+    }
+  }
     const {photoUrl,name, price, rating,_id }= toy;
     return (
         <div>
@@ -15,7 +24,7 @@ const Toy = ({toy}) => {
     <p>Rating: {rating}</p>
     <div className="card-actions justify-end">
 
-    <Link to={`/toy/${_id}`}> <button className="btn btn-ghost btn-xs">details</button></Link> 
+    <Link to={`/toy/${_id}`}> <button onClick={handleAlert} className="btn btn-ghost btn-xs">details</button></Link> 
     </div>
   </div>
 </div>
