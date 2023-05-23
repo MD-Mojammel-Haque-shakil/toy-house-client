@@ -6,7 +6,7 @@ import ToyRow from "./ToyRow";
 const MyToys = () => {
      const [myToys, setToys] = useState([])
     const {user} = useContext(AuthContext)
-    const url = `http://localhost:5000/mytoys?email=${user.email}`
+    const url = `https://toys-home-server.vercel.app/mytoys?email=${user.email}`
    useEffect(()=>{
     fetch(url, {method: "GET"})
     .then(res=> res.json())

@@ -31,7 +31,7 @@ const Header = () => {
     <div className="w-20 rounded-full">
           <img src="https://img.freepik.com/free-vector/font-design-word-toy-shop-with-many-toys_1308-42318.jpg?w=740&t=st=1684593385~exp=1684593985~hmac=d937652ec42c511d67c7945c7527a4bfa83cab23f5c2c890ee20c49f74d03bab" />
         </div>
-    <a className="btn btn-ghost normal-case text-2xl">Baby Toy House</a>
+    <a className="btn btn-ghost normal-case text-2xl">BABY TOY HOUSE</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

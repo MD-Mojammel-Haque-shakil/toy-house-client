@@ -7,15 +7,15 @@ const ShopByCate = () => {
   const [toys, setToys] = useState([]);
   console.log(toys)
 
- console.log(name)
+ 
   useEffect(()=>{
-    fetch(`http://localhost:5000/toys/?tab=${select}`)
+    fetch(`https://toys-home-server.vercel.app/toys/?tab=${select}`)
         .then(res => res.json())
         .then(data=>setToys(data))
   }, [select])
   return (
     <div className="">
-      <h3 className="text-purple-600 text-3xl text-center mt-8">Shop By CateGory</h3>
+      <h3 className="text-purple-500 text-3xl text-center mt-8">Shop By CateGory</h3>
       <div className="btn- my-4 lg:mx-96">
         <button onClick={()=>setSelect('sport')} className="btn btn-active sm:ms-4  lg:me-12">Sports car</button>
         <button onClick={()=>setSelect('police')} className="btn btn-warning  lg:me-12">Police car</button>
