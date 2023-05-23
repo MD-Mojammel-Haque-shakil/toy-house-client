@@ -25,7 +25,7 @@ const Header = () => {
       <li><a>My Toys</a></li>
      
       <li><Link to='/addatoy'>Add A Toy</Link></li>
-      <li><a>Blogs</a></li>
+      <li><Link to='/blog'>Blogs</Link></li>
       </ul>
     </div>
     <div className="w-20 rounded-full">
@@ -40,7 +40,7 @@ const Header = () => {
       <li><Link to='/mytoys'>My Toys</Link></li>
      
       <li><Link to='/addatoy'>Add A Toy</Link></li>
-      <li><a>Blogs</a></li>
+      <li><Link to='/blog'>Blogs</Link></li>
     </ul>
   </div>
   <div className="navbar-end">

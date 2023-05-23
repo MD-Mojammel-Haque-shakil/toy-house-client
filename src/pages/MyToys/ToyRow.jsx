@@ -11,6 +11,7 @@ const ToyRow = ({myToy}) => {
     const {_id, name,sellerName, toyCategory,price, quantity,  } = myToy;
     const handleDelete=_id=>{
        console.log(_id)
+
        Swal.fire({
         title: 'Are you sure?',
         text: "You want to delete this item?",
@@ -22,9 +23,9 @@ const ToyRow = ({myToy}) => {
       }).then((result) => {
         if (result.isConfirmed) {
         
-          const url =`http://localhost:5000/mytoys/${_id}`
+          const url =`https://toys-home-server.vercel.app/mytoys/${_id}`
           fetch(url,{
-            method: 'DELETE'
+            method:'DELETE'
           })
           .then(res=>res.json())
           .then(data=>{
