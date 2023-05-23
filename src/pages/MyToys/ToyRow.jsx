@@ -1,4 +1,5 @@
 
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -61,7 +62,9 @@ const ToyRow = ({myToy}) => {
         <td>{price}</td>
          <td>{quantity}</td>
          <th>
-         <button className="btn btn-ghost btn-xs">update</button>
+     <Link to={`/update/${_id}`}>
+     <button className="btn btn-ghost btn-xs">update</button>
+     </Link>
         <button onClick={()=>handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
         </th>
       </tr>
